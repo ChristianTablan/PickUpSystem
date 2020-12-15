@@ -1,0 +1,27 @@
+
+<table class="finalCart">	
+        <tr>
+            <th class="text-center">Item Description</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Price</th>
+        </tr>
+	<% @order_items.each do |item| %>  
+		<tr>
+            <td><%= item.product.title %> </td>
+
+            <td id="mealCount">
+            	<%= form_with model: item do |f|%>
+            	<%= f.number_field :quantity, value: item.quantity.to_i %>
+            </td>          	
+            <td id="mealPrice">
+            	<%= item.total %>
+            </td>
+            <td>
+            	<%= f.submit "Update" %>
+				<%= link_to "Remove", item, method: :delete, remote: true %>
+            	<% end %>
+            </td>		
+        </tr>
+    <% end %>
+</table>
+
