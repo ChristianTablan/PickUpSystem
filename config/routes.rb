@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :administrators
   get 'carts', to: 'carts#show'
   resources :products
   resources :shops, only:[:index, :show]

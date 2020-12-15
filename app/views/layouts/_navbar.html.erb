@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to 'https://phoongrau.ca/' do%>
+    <%=image_tag("Logo.png", size: "120x67", :alt => "")%>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-auto">
+      
+      <% if administrator_signed_in? %>
+      <li class="nav-item">
+        <%= link_to 'ORDERS', root_path, class:"nav-link"%>
+      </li>
+        <li class="nav-item">
+          <%= link_to 'INVENTORY', products_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Edit Profile', edit_administrator_registration_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Out', destroy_administrator_session_path, method: :delete, class:"nav-link"%>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'HOME', 'https://phoongrau.ca/', class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'MENU', 'https://phoongrau.ca/menu', class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'CONTACT', 'https://phoongrau.ca/contact', class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'DELIVERY', 'https://www.ubereats.com/ca/montreal/food-delivery/pho-ong-rau/JH-gtZnXQ-a3gZj-2mQJaA', class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'PICKUP', root_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Admin Portal', new_administrator_session_path, class:"nav-link"%>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+</nav>
