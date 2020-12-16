@@ -17,8 +17,9 @@
             	<%= item.total %>
             </td>
             <td>
-            	<%= f.submit "Update"%>
-				<%= link_to "Remove", item, method: :delete, remote: true %>
+                <%= f.submit "Update", onclick: 'javascript:location.reload();'%>
+            	
+				<%= link_to "Remove", item, method: :delete, remote: true, onclick: 'javascript:location.reload();'%>
             	<% end %>
             </td>		
         </tr>
