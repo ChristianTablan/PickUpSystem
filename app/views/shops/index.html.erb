@@ -1,41 +1,40 @@
-<h1>Shops#index</h1>
-<p>Find me in app/views/shops/index.html.erb</p>
-
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Availability</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<div class="container">
+  <h1>Menu</h1>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.availability %></td>
-        <td><%= link_to 'Show', shop_path(product) %></td>
-
-        <td>
-          <%= form_for @order_item, remote: true do |f| %>
-            <%= f.hidden_field :product_id, value: product.id %>
-            <%= f.number_field :quantity, :value => 1, :min => 1 %>
-            <%= f.submit "Add to Cart" %>
-          <% end %>
-        </td>
-
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Availability</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><img class="img-fluid rounded" src="https://media-cdn.tripadvisor.com/media/photo-s/17/4c/13/cd/porc-boeuf-poulet-et.jpg" alt=""></td>        
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.availability %></td>
+          <td><%= link_to 'Show', shop_path(product) %></td>
 
-<button id="cart"><%= render 'carts/cart' %></button>
+          <td>
+            <%= form_for @order_item, remote: true do |f| %>
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.number_field :quantity, :value => 1, :min => 1 %>
+              <%= f.submit "Add to Cart" %>
+            <% end %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <button type="button" id="cart" class="btn btn-success"><%= render 'carts/cart' %></button>
+</div>
+
+
+
