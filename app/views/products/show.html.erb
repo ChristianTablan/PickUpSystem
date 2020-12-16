@@ -20,6 +20,6 @@
 	  <%= @product.availability %>
 	</p>
 
-	<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning border-right" %> &nbsp; &nbsp; &nbsp;
-	<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+	<%= link_to 'Back', products_path %> &nbsp; | &nbsp;
+	<%= link_to 'Edit', edit_product_path(@product) %>
 </div>
