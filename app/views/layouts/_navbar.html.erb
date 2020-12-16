@@ -12,7 +12,7 @@
       
       <% if administrator_signed_in? %>
       <li class="nav-item">
-        <%= link_to 'ORDERS', root_path, class:"nav-link"%>
+        <%= link_to 'ORDERS', upcomings_show_path, class:"nav-link"%>
       </li>
         <li class="nav-item">
           <%= link_to 'INVENTORY', products_path, class:"nav-link"%>
@@ -38,7 +38,7 @@
           <%= link_to 'DELIVERY', 'https://www.ubereats.com/ca/montreal/food-delivery/pho-ong-rau/JH-gtZnXQ-a3gZj-2mQJaA', class:"nav-link"%>
         </li>
         <li class="nav-item">
-          <%= link_to 'PICKUP', root_path, class:"nav-link"%>
+          <%= link_to 'PICKUP', shops_path, class:"nav-link"%>
         </li>
         <li class="nav-item">
         <%= link_to 'Admin Portal', new_administrator_session_path, class:"nav-link"%>
