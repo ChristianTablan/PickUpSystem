@@ -1,3 +1,4 @@
+<% if administrator_signed_in? %>
 <div class="container jumbotron">
 	<div class="row">
 		<div class="col-sm">
@@ -13,3 +14,6 @@
 		</div>
 	</div>
 </div>
+<%else%>
+<h2><%= link_to "Click here", shops_path %> to Place an order</h2>
+<% end %>

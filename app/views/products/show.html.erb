@@ -1,5 +1,4 @@
-
-<div id="showItem" class="container jumbotron">
+<% if administrator_signed_in? %><div id="showItem" class="container jumbotron">
 	<p>
 	  <strong>Title:</strong>
 	  <%= @product.title %>
@@ -23,3 +22,6 @@
 	<%= link_to 'Back', products_path %> &nbsp; | &nbsp;
 	<%= link_to 'Edit', edit_product_path(@product) %>
 </div>
+<%else%>
+<h2><%= link_to "Click here", shops_path %> to Place an order</h2>
+<% end %>
